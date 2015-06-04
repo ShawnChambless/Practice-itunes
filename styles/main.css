@@ -1,0 +1,72 @@
+html, body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Helvetica Nue", Helvetica, Arial, sans-serif;
+  font-weight: 200; }
+
+a {
+  text-decoration: none !important; }
+
+.gridStyle {
+  border: 1px solid #d4d4d4;
+  width: 100%;
+  height: 95vh;
+  min-height: 95vh;
+  max-height: 95vh; }
+
+.ngTopPanel {
+  line-height: 25px;
+  margin-top: 34px; }
+
+.ngCell {
+  display: table-cell;
+  height: auto !important;
+  overflow: visible;
+  position: static; }
+
+.ngRow {
+  display: table-row;
+  height: auto !important;
+  position: static; }
+
+.ngCellText {
+  height: auto !important;
+  white-space: normal;
+  overflow: visible; }
+
+.ngGrid.unselectable {
+  margin-top: 10px; }
+
+.btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+span.glyphicon {
+  font-size: 1.4em; }
+
+.form-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }

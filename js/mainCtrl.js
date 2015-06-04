@@ -37,13 +37,13 @@ $scope.getSongData = function(artist) {
       height: '110px',
       sortInfo: {fields: ['Song', 'Artist', 'Collection', 'Type'], directions: ['asc']},
       columnDefs: [
-        {field: 'Play', displayName: 'Play', width: '40px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><a href="{{row.getProperty(col.field)}}"><img src="http://www.icty.org/x/image/Miscellaneous/play_icon30x30.png"></a></div>'},
+        {field: 'Play', displayName: 'Preview', width: '80px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><a href="{{row.getProperty(col.field)}}"><div class="btn btn-lg btn-default"><span class="glyphicon glyphicon-play-circle"></span></div></a></div>'},
         {field: 'Artist', displayName: 'Artist'},
         {field: 'Song', displayName: 'Song'},
-        {field: 'Collection', displayName: 'Collection'},
+        {field: 'Collection', displayName: 'Album'},
         {field: 'AlbumArt', displayName: 'Album Art', width: '110px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><img src="{{row.getProperty(col.field)}}"></div>'},
-        {field: 'Type', displayName: 'Type'},
-        {field: 'CollectionPrice', displayName: 'Collection Price'},
+        {field: 'CollectionPrice', displayName: 'Album Price'},
+        {field: 'Type', displayName: 'Type'}
       ]
   };
 
