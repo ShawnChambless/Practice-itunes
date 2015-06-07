@@ -9,6 +9,16 @@ html, body {
 a {
   text-decoration: none !important; }
 
+.navbar-brand {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
 .gridStyle {
   border: 1px solid #d4d4d4;
   width: 100%;
@@ -39,19 +49,5 @@ a {
 .ngGrid.unselectable {
   margin-top: 10px; }
 
-.btn {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
 span.glyphicon {
-  font-size: 1.4em; }
+  font-size: 1.6em; }
