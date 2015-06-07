@@ -1,52 +1,20 @@
+/*global angular: true*/
+/*global console: true*/
 var app = angular.module('itunes');
 
 app.controller('mainCtrl', function($scope, itunesService){
 
-var parseData = function(songs) {
-    var parsedSongs = [];
-
-    for(var i = 0; i < songs.length; i++) {
-        var finalData = {};
-
-        finalData['Play'] = songs[i].previewUrl;
-        finalData['Artist'] = songs[i].artistName;
-        finalData['Song'] = songs[i].trackName;
-        finalData['Collection'] = songs[i].collectionCensoredName;
-        finalData['AlbumArt'] = songs[i].artworkUrl100;
-        finalData['Type'] = songs[i].kind;
-        finalData['CollectionPrice'] = songs[i].collectionPrice;
-
-        parsedSongs.push(finalData);
-
-    }
-    return parsedSongs;
-};
-
-$scope.getSongData = function(artist) {
+$scope.getSongData = function() {
     itunesService.getArtist($scope.artist).then(function(response) {
         console.log(response.data.results);
-        $scope.songData = parseData(response.data.results);
+        $scope.songData = itunesService.parseData(response.data.results);
     });
-}
+};
+$scope.gridOptions = itunesService.gridOptions;
 
   //This is setting up the default behavior of our ng-grid. The important thing to note is
   //the 'data' property. The value is 'songData'. That means ng-grid is looking for songData on $scope and is putting whatever songData is into the grid.
   //this means when you make your iTunes request, you'll need to get back the information, parse it accordingly, then set it to songData on the scope -> $scope.songData = ...
-  $scope.gridOptions = {
-      data: 'songData',
-      height: '110px',
-      sortInfo: {fields: ['Song', 'Artist', 'Collection', 'Type'], directions: ['asc']},
-      columnDefs: [
-        {field: 'Play', displayName: 'Preview', width: '80px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><a href="{{row.getProperty(col.field)}}"><div class="btn btn-lg btn-default"><span class="glyphicon glyphicon-play-circle"></span></div></a></div>'},
-        {field: 'Artist', displayName: 'Artist'},
-        {field: 'Song', displayName: 'Song'},
-        {field: 'Collection', displayName: 'Album'},
-        {field: 'AlbumArt', displayName: 'Album Art', width: '110px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><img src="{{row.getProperty(col.field)}}"></div>'},
-        {field: 'CollectionPrice', displayName: 'Album Price'},
-        {field: 'Type', displayName: 'Type'}
-      ]
-  };
-
   //Our controller is what's going to connect our 'heavy lifting' itunesService with our view (index.html) so our user can see the results they get back from itunes.
 
   //First inject itunesService into your controller.
