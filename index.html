@@ -2,7 +2,6 @@
 <html ng-app="itunes">
   <head>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
   </head>
@@ -13,10 +12,9 @@
           <div class="navbar-header">
             <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-music"></span> DevTunes</a>
           </div>
-          <form class="navbar-form navbar-left" role="search">
+          <form class="navbar-form navbar-left"  ng-submit='getSongData()' role="search">
             <div class="form-group">
               <input type="text" class="form-control" ng-model="artist" placeholder="Artist, Song, or Album" >
-              <button class="btn btn-primary" ng-click="getSongData()"> Submit </button>
             </div>
           </form>
         </div>
